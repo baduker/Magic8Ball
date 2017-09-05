@@ -24,7 +24,7 @@ void Magic8Ball::PrintInfo() {
     std::cout << "\t     `@@@@@@@@@P'.......\n";
     std::cout << "\t        \"\"\"\"........\n";
     std::cout << "\n";
-    std::cout << "\tThe Magic 8 Ball v. 0.2\n";
+    std::cout << "\tThe Magic 8 Ball v. 0.2.1\n";
     std::cout << "\t(c) Noob Code, 2017\n\n";
     std::cout << "\tNot sure about your future? Fear not!\n";
     std::cout << "\tThe Magic 8 Ball is hear to help you!\n";
