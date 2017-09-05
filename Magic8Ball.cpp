@@ -36,7 +36,7 @@ void Magic8Ball::AskTheUser() {
     std::getline(std::cin, user_question); // TODO Add user input error handling
 }
 
-void Magic8Ball::Shake8Ball() {
+void Magic8Ball::Shake8Ball() { // TODO if more 'answer' arrays added write a feature to pick them
     srand((unsigned) time(NULL));
     int Random8BallAnswer; // local variable to run the mutator
     Random8BallAnswer = rand() % Default8BallAnswers->size(); // the mutator "engine"

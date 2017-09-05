@@ -19,7 +19,7 @@ public:
     bool Ask8BallAgain(); // Checks if the user wants to shake the 8 Ball again
 
 private:
-    // The collections of built-in 8 Ball answers // TODO Add variations of answers (maybe 2-3 diffrent arrays)
+    // The collections of built-in 8 Ball answers // TODO Add variations of answers (maybe 2-3 different arrays)
     std::string Default8BallAnswers [20]= {"As I see it.", "Yes.", "Ask again later.", "Better not tell you now.",
                                     "Cannot predict now.", "Concentrate and ask again.", "Don’t count on it.",
                                     "It is certain.", "It is decidedly so.", "Most likely.", "My reply is no.",
