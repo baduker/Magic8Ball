@@ -24,13 +24,16 @@ public:
 
 private:
     // The collections of built-in 8 Ball answers // TODO Add variations of answers (maybe 2-3 different arrays)
-    std::string Default8BallAnswers [20]= {"As I see it.", "Yes.", "Ask again later.", "Better not tell you now.",
+    std::string Default8BallAnswers [33]= {"As I see it.", "Yes.", "Ask again later.", "Better not tell you now.",
                                     "Cannot predict now.", "Concentrate and ask again.", "Don’t count on it.",
                                     "It is certain.", "It is decidedly so.", "Most likely.", "My reply is no.",
                                     "My sources say no.", "Outlook good.", "Outlook not so good.",
                                     "Reply hazy, try again.", "Signs point to yes.", "Very doubtful.",
-                                    "Without a doubt.", "Yes, definitely.",
-                                    "You may rely on it."};
+                                    "Without a doubt.", "Yes, definitely.", "You may rely on it.",
+                                    "You've got to be kidding...", "That's ridiculous.", "Well, maybe.",
+                                    "Dumb Question. Ask another.", "In your dreams!", "I've got a headache. Ask later.",
+                                    "Oh, please.", "What do you think?", "Cannot predict now.", "You can count on it!",
+                                    "You wish.", "It's in the mail.", "The voices told me to say nothing."};
     std::string The8BallAnswer; // The return variable from the mutator
 };
 

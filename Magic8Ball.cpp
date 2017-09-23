@@ -5,7 +5,7 @@
 #include "Magic8Ball.h"
 #include <iostream>
 
-Magic8Ball::Magic8Ball() {}
+Magic8Ball::Magic8Ball () {};
 
 void Magic8Ball::ShowLogo () {
     ClearScreen();
@@ -25,23 +25,21 @@ void Magic8Ball::ShowLogo () {
     std::cout << "\t     `@@@@@@@@@P'.......\n";
     std::cout << "\t        \"\"\"\"........\n";
     std::cout << "\n";
-    std::cout << "\tThe Magic 8 Ball v. 0.2.2\n";
+    std::cout << "\tThe Magic 8 Ball v. 0.2.3\n";
     std::cout << "\t(c) Noob Code, 2017\n\n";
-
     PressEnter();
-
 }
 
-void Magic8Ball::Shake8Ball() { // TODO if more 'answer' arrays added write a feature to pick them
-    srand((unsigned) time(NULL));
+void Magic8Ball::Shake8Ball() {
+    srand(time(NULL));
     int Random8BallAnswer; // local variable to run the mutator
-    Random8BallAnswer = rand() % Default8BallAnswers->size(); // the mutator "engine"
+    Random8BallAnswer = rand() % (0 - 33); // the mutator "engine" picks a random number from 0-33 range = array size
     The8BallAnswer = Default8BallAnswers[Random8BallAnswer]; // converts the array value to the string
 }
 
 std::string Magic8Ball::GetTheReply() {
     ClearScreen();
-    std::cout << "\n\t" << The8BallAnswer; // TODO in future versions reformat the answer in form of an ASCII art
+    std::cout << "\n\t" << The8BallAnswer;
     std::cout << std::endl;
     return The8BallAnswer;
 }
@@ -61,7 +59,7 @@ bool Magic8Ball::Ask8BallAgain() {
         ClearScreen();
         std::cout << "\n\tTHANK YOU!\n";
         std::cout << "\tThe Magic 8 Ball wishes you luck!\n";
-        std::cout << "\n\tPress any key to exit.\n";
+        std::cout << "\n\tPress any key to exit.";
         std::cin.ignore();
         return (false);
         }
@@ -82,11 +80,9 @@ void Magic8Ball::PressEnter () {
 }
 
 void Magic8Ball::PrintInfo () {
-
     std::cout << "\tNot sure about your future? Fear not!\n";
     std::cout << "\tThe Magic 8 Ball is hear to help you!\n";
-    std::cout << "\n\tThink of a yes-no question and press ENTER to shake the 8 Ball\n\n";
-    PressEnter();
+    std::cout << "\n\tThink of a yes-no question and press ENTER to shake the 8 Ball.";
+    std::cin.ignore(std::numeric_limits<char>::max(), '\n');
     ClearScreen();
 }
-
