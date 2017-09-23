@@ -12,11 +12,15 @@ public:
 
     Magic8Ball(); // This is the constructor
 
-    void PrintInfo(); // Prints the 8 Ball ASCII art
-    void AskTheUser(); // Catches the user's question
+    void ShowLogo (); // Prints the 8 Ball ASCII art
     void Shake8Ball(); // This is the Magic 8 Ball mutator
     std::string GetTheReply(); // Gets the answers from the mutator (8 Ball)
     bool Ask8BallAgain(); // Checks if the user wants to shake the 8 Ball again
+
+    void PrintInfo();
+
+    void ClearScreen();
+    void PressEnter();
 
 private:
     // The collections of built-in 8 Ball answers // TODO Add variations of answers (maybe 2-3 different arrays)

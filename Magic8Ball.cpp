@@ -7,7 +7,8 @@
 
 Magic8Ball::Magic8Ball() {}
 
-void Magic8Ball::PrintInfo() {
+void Magic8Ball::ShowLogo () {
+    ClearScreen();
     std::cout << "\n";
     std::cout << "\tThe Magic 8 ball predicts the future!\n";
     std::cout << "\t         ____\n";
@@ -24,16 +25,11 @@ void Magic8Ball::PrintInfo() {
     std::cout << "\t     `@@@@@@@@@P'.......\n";
     std::cout << "\t        \"\"\"\"........\n";
     std::cout << "\n";
-    std::cout << "\tThe Magic 8 Ball v. 0.2.1\n";
+    std::cout << "\tThe Magic 8 Ball v. 0.2.2\n";
     std::cout << "\t(c) Noob Code, 2017\n\n";
-    std::cout << "\tNot sure about your future? Fear not!\n";
-    std::cout << "\tThe Magic 8 Ball is hear to help you!\n";
-}
 
-void Magic8Ball::AskTheUser() {
-    std::string user_question;
-    std::cout << "\n\tAsk the 8 Ball a YES-NO question: ";
-    std::getline(std::cin, user_question); // TODO Add user input error handling
+    PressEnter();
+
 }
 
 void Magic8Ball::Shake8Ball() { // TODO if more 'answer' arrays added write a feature to pick them
@@ -44,30 +40,53 @@ void Magic8Ball::Shake8Ball() { // TODO if more 'answer' arrays added write a fe
 }
 
 std::string Magic8Ball::GetTheReply() {
+    ClearScreen();
     std::cout << "\n\t" << The8BallAnswer; // TODO in future versions reformat the answer in form of an ASCII art
     std::cout << std::endl;
     return The8BallAnswer;
 }
 
 bool Magic8Ball::Ask8BallAgain() {
-    std::cout << "\n\tWould you like to ask the Magic 8 Ball again? (YES / NO) ";
-    std::string response;
-    std::getline(std::cin, response);
-    if (response[0] == 'y' || response[0] == 'Y')
+    std::cout << "\n\tShake the 8 Ball again?\n";
+    std::cout << "\t[S]hake it again or [Q]uit it!\n";
+    std::cout << "\t";
+    std::string key;
+    std::getline(std::cin, key);
+    if (key[0] == 's' || key[0] == 'S')
     {
+        ClearScreen();
         return (true);
     }
-    else if (response[0] == 'n' || response[0] == 'N')
-    {
+    else if (key[0] == 'q' || key[0] == 'Q') {
+        ClearScreen();
         std::cout << "\n\tTHANK YOU!\n";
         std::cout << "\tThe Magic 8 Ball wishes you luck!\n";
         std::cout << "\n\tPress any key to exit.\n";
         std::cin.ignore();
         return (false);
+        }
+    else
+        std::cout << "\tThe 8 Ball doesn't understand the command.\n";
+        std::cout << "\tTry again.";
+    return Ask8BallAgain();
     }
-    else {
-        std::cout << "\n\tWrong answer! Please type YES or NO";
-        return (Magic8Ball::Ask8BallAgain());
-    }
+
+
+void Magic8Ball::ClearScreen () { std::cout << "\033[2J\033[1;1H"; }
+
+void Magic8Ball::PressEnter () {
+    std::string temp;
+    std::cout << "\tPress ENTER to continue...";
+    std::cin.ignore(std::numeric_limits<char>::max(), '\n');
+    ClearScreen();
+}
+
+void Magic8Ball::PrintInfo () {
+
+    std::cout << "\tNot sure about your future? Fear not!\n";
+    std::cout << "\tThe Magic 8 Ball is hear to help you!\n";
+    std::cout << "\n\tThink of a yes-no question and press ENTER to shake the 8 Ball\n\n";
+    PressEnter();
+    ClearScreen();
 }
 
