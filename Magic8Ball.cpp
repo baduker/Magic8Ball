@@ -1,7 +1,3 @@
-//
-// Created by Baduker on 04/09/2017.
-//
-
 #include "Magic8Ball.h"
 #include <iostream>
 
@@ -10,7 +6,7 @@ Magic8Ball::Magic8Ball () {};
 void Magic8Ball::ShowLogo () {
     ClearScreen();
     std::cout << "\n";
-    std::cout << "\tThe Magic 8 ball predicts the future!\n";
+    std::cout << "\tTHE MAGIC 8 BALL\n";
     std::cout << "\t         ____\n";
     std::cout << "\t     ,dP9CGG88@b,\n";
     std::cout << "\t   ,IP  _   Y888@@b,\n";
@@ -24,17 +20,49 @@ void Magic8Ball::ShowLogo () {
     std::cout << "\t  `Y8888888@@@@@@@P'......\n";
     std::cout << "\t     `@@@@@@@@@P'.......\n";
     std::cout << "\t        \"\"\"\"........\n";
-    std::cout << "\n";
-    std::cout << "\tThe Magic 8 Ball v. 0.2.3\n";
-    std::cout << "\t(c) Noob Code, 2017\n\n";
+    std::cout << std::endl;
+    std::cout << "\tNot sure about your future? Fear not!\n";
+    std::cout << "\tThe Magic 8 Ball is hear to help you.\n";
+    std::cout << "\n\tThink of a YES-NO question and press ENTER to shake the Magic 8 Ball.\n";
     PressEnter();
+}
+
+void Magic8Ball::ShowLogoOnExit () {
+    ClearScreen();
+    std::cout << "\n";
+    std::cout << "\tThe Magic 8 ball wishes you luck!\n";
+    std::cout << "\t            _......._\n";
+    std::cout << "\t         .-:::::::::::-.\n";
+    std::cout << "\t       .:::::::::::::::::.\n";
+    std::cout << "\t      :::::::' .-. `:::::::\n";
+    std::cout << "\t     :::::::  :   :  :::::::\n";
+    std::cout << "\t    ::::::::  :   :  ::::::::\n";
+    std::cout << "\t    :::::::::._`-'_.:::::::::\n";
+    std::cout << "\t    :::::::::' .-. `:::::::::\n";
+    std::cout << "\t    ::::::::  :   :  ::::::::\n";
+    std::cout << "\t     :::::::  :   :  :::::::\n";
+    std::cout << "\t      :::::::._`-'_.:::::::\n";
+    std::cout << "\t       `:::::::::::::::::'\n";
+    std::cout << "\t          `-:::::::::::\n";
+    std::cout << "\n";
+    std::cout << "\tThe Magic 8 Ball\n";
+    std::cout << "\tVersion 0.2.4\n";
+    std::cout << "\tMade with a keyboard & CLion\n";
+    std::cout << "\t(c) Noob Code, 2017\n\n";
+    std::cout << "\tPRESS ANY KEY TO EXIT\n";
+    std::cout << "\t";
+    std::cin.ignore();
 }
 
 void Magic8Ball::Shake8Ball() {
     srand(time(NULL));
     int Random8BallAnswer; // local variable to run the mutator
-    Random8BallAnswer = rand() % (0 - 33); // the mutator "engine" picks a random number from 0-33 range = array size
-    The8BallAnswer = Default8BallAnswers[Random8BallAnswer]; // converts the array value to the string
+    Random8BallAnswer = rand() % (0 - 33);
+    /* The mutator "engine" picks a random number between 0 and 33 to match
+     * the size of the array which stores the default 8 Ball answers. */
+    The8BallAnswer = Default8BallAnswers[Random8BallAnswer];
+    /* This converts the randomly selected array value
+     * to the string and outputs it as the 8 Ball answer */
 }
 
 std::string Magic8Ball::GetTheReply() {
@@ -43,6 +71,7 @@ std::string Magic8Ball::GetTheReply() {
     std::cout << std::endl;
     return The8BallAnswer;
 }
+
 
 bool Magic8Ball::Ask8BallAgain() {
     std::cout << "\n\tShake the 8 Ball again?\n";
@@ -57,20 +86,19 @@ bool Magic8Ball::Ask8BallAgain() {
     }
     else if (key[0] == 'q' || key[0] == 'Q') {
         ClearScreen();
-        std::cout << "\n\tTHANK YOU!\n";
-        std::cout << "\tThe Magic 8 Ball wishes you luck!\n";
-        std::cout << "\n\tPress any key to exit.";
-        std::cin.ignore();
+        ShowLogoOnExit();
         return (false);
         }
     else
-        std::cout << "\tThe 8 Ball doesn't understand the command.\n";
-        std::cout << "\tTry again.";
+        ClearScreen();
+        std::cout << "\n\tWARNING!\n";
+        std::cout << "\n\tThe 8 Ball doesn't understand the command.\n";
+        std::cout << "\tPlease, try again.\n";
     return Ask8BallAgain();
     }
 
-
 void Magic8Ball::ClearScreen () { std::cout << "\033[2J\033[1;1H"; }
+
 
 void Magic8Ball::PressEnter () {
     std::string temp;
@@ -79,10 +107,13 @@ void Magic8Ball::PressEnter () {
     ClearScreen();
 }
 
-void Magic8Ball::PrintInfo () {
-    std::cout << "\tNot sure about your future? Fear not!\n";
-    std::cout << "\tThe Magic 8 Ball is hear to help you!\n";
-    std::cout << "\n\tThink of a yes-no question and press ENTER to shake the 8 Ball.";
-    std::cin.ignore(std::numeric_limits<char>::max(), '\n');
-    ClearScreen();
+//This function encapsulates the entire program
+void DoMagic () {
+    Magic8Ball My8Ball;
+
+    My8Ball.ShowLogo();
+    do {
+        My8Ball.Shake8Ball();
+        My8Ball.GetTheReply();
+    } while (My8Ball.Ask8BallAgain());
 }
