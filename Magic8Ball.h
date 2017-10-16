@@ -22,7 +22,7 @@ public:
 
 private:
     // The collections of built-in 8 Ball answers //
-    std::string Default8BallAnswers [33]= {"As I see it.", "Yes.", "Ask again later.", "Better not tell you now.",
+    std::string Default8BallAnswers [36]= {"As I see it.", "Yes.", "Ask again later.", "Better not tell you now.",
                                     "Cannot predict now.", "Concentrate and ask again.", "Don’t count on it.",
                                     "It is certain.", "It is decidedly so.", "Most likely.", "My reply is no.",
                                     "My sources say no.", "Outlook good.", "Outlook not so good.",
@@ -31,7 +31,9 @@ private:
                                     "You've got to be kidding...", "That's ridiculous.", "Well, maybe.",
                                     "Dumb Question. Ask another.", "In your dreams!", "I've got a headache. Ask later.",
                                     "Oh, please.", "What do you think?", "Cannot predict now.", "You can count on it!",
-                                    "You wish.", "It's in the mail.", "The voices told me to say nothing."};
+                                    "You wish.", "It's in the mail.", "The voices told me to say nothing.",
+                                    "Honestly, I wish I knew", "No idea. You're on your own.",
+                                    "Ask again later. I can’t… I just can’t deal with this right now"};
     std::string The8BallAnswer; // The return variable from the mutator
 };
 

@@ -30,23 +30,25 @@ void Magic8Ball::ShowLogo () {
 void Magic8Ball::ShowLogoOnExit () {
     ClearScreen();
     std::cout << "\n";
-    std::cout << "\tThe Magic 8 ball wishes you luck!\n";
-    std::cout << "\t            _......._\n";
-    std::cout << "\t         .-:::::::::::-.\n";
-    std::cout << "\t       .:::::::::::::::::.\n";
-    std::cout << "\t      :::::::' .-. `:::::::\n";
-    std::cout << "\t     :::::::  :   :  :::::::\n";
-    std::cout << "\t    ::::::::  :   :  ::::::::\n";
-    std::cout << "\t    :::::::::._`-'_.:::::::::\n";
-    std::cout << "\t    :::::::::' .-. `:::::::::\n";
-    std::cout << "\t    ::::::::  :   :  ::::::::\n";
-    std::cout << "\t     :::::::  :   :  :::::::\n";
-    std::cout << "\t      :::::::._`-'_.:::::::\n";
-    std::cout << "\t       `:::::::::::::::::'\n";
-    std::cout << "\t          `-:::::::::::\n";
-    std::cout << "\n";
-    std::cout << "\tThe Magic 8 Ball\n";
-    std::cout << "\tVersion 0.2.4\n";
+    std::cout << "\t           .-----------.\n";
+    std::cout << "\t        ,-              '-.\n";
+    std::cout << "\t     ,-'    The Magic      '-.\n";
+    std::cout << "\t    /                         \\\n";
+    std::cout << "\t  ,'         .d8888b.          `.\n";
+    std::cout << "\t ;          d88P  Y88b           :\n";
+    std::cout << "\t ;          Y88b. d88P           :\n";
+    std::cout << "\t;            \"Y88888\"             :\n";
+    std::cout << "\t|           .d8P\"\"Y8b.            |\n";
+    std::cout << "\t|           888    888            |\n";
+    std::cout << "\t:           Y88b  d88P            ;\n";
+    std::cout << "\t :           \"Y8888P\"            ;\n";
+    std::cout << "\t :                               ; \n";
+    std::cout << "\t  \\            Ball              /\n";
+    std::cout << "\t   `.                          ,'\n";
+    std::cout << "\t     \\       Version:        /\n";
+    std::cout << "\t      '-.      0.2.5      ,-'\n";
+    std::cout << "\t        '-.            ,-'        \n";
+    std::cout << "\t            `---------'            \n";
     std::cout << "\tMade with a keyboard & CLion\n";
     std::cout << "\t(c) Noob Code, 2017\n\n";
     std::cout << "\tPRESS ANY KEY TO EXIT\n";
@@ -71,7 +73,6 @@ std::string Magic8Ball::GetTheReply() {
     std::cout << std::endl;
     return The8BallAnswer;
 }
-
 
 bool Magic8Ball::Ask8BallAgain() {
     std::cout << "\n\tShake the 8 Ball again?\n";
@@ -98,7 +99,6 @@ bool Magic8Ball::Ask8BallAgain() {
     }
 
 void Magic8Ball::ClearScreen () { std::cout << "\033[2J\033[1;1H"; }
-
 
 void Magic8Ball::PressEnter () {
     std::string temp;
