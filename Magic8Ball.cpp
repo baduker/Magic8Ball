@@ -5,25 +5,35 @@ Magic8Ball::Magic8Ball () {};
 
 void Magic8Ball::ShowLogo () {
     ClearScreen();
-    std::cout << "\n";
-    std::cout << "\tTHE MAGIC 8 BALL\n";
-    std::cout << "\t         ____\n";
-    std::cout << "\t     ,dP9CGG88@b,\n";
-    std::cout << "\t   ,IP  _   Y888@@b,\n";
-    std::cout << "\t  dIi  (_)   G8888@b\n";
-    std::cout << "\t dCII  (_)   G8888@@b\n";
-    std::cout << "\t GCCIi     ,GG8888@@@\n";
-    std::cout << "\t GGCCCCCCCGGG88888@@@\n";
-    std::cout << "\t GGGGCCCGGGG88888@@@@...\n";
-    std::cout << "\t Y8GGGGGG8888888@@@@P.....\n";
-    std::cout << "\t  Y88888888888@@@@@P......\n";
-    std::cout << "\t  `Y8888888@@@@@@@P'......\n";
-    std::cout << "\t     `@@@@@@@@@P'.......\n";
-    std::cout << "\t        \"\"\"\"........\n";
     std::cout << std::endl;
-    std::cout << "\tNot sure about your future? Fear not!\n";
-    std::cout << "\tThe Magic 8 Ball is hear to help you.\n";
-    std::cout << "\n\tThink of a YES-NO question and press ENTER to shake the Magic 8 Ball.\n";
+    std::cout << "\t  _____ _            __  __             _      \n";
+    std::cout << "\t |_   _| |__   ___  |  \\/  | __ _  __ _(_) ___ \n";
+    std::cout << "\t   | | | '_ \\ / _ \\ | |\\/| |/ _` |/ _` | |/ __|\n";
+    std::cout << "\t   | | | | | |  __/ | |  | | (_| | (_| | | (__ \n";
+    std::cout << "\t   |_| |_| |_ \\___| |_|  |_|\\__,_|\\__, |_|\\___|\n";
+    std::cout << "\t                                   |___/       \n";
+    std::cout << "\t\t         ____\n";
+    std::cout << "\t\t     ,dP9CGG88@b,\n";
+    std::cout << "\t\t   ,IP  _   Y888@@b,\n";
+    std::cout << "\t\t  dIi  (_)   G8888@b\n";
+    std::cout << "\t\t dCII  (_)   G8888@@b\n";
+    std::cout << "\t\t GCCIi     ,GG8888@@@\n";
+    std::cout << "\t\t GGCCCCCCCGGG88888@@@\n";
+    std::cout << "\t\t GGGGCCCGGGG88888@@@@...\n";
+    std::cout << "\t\t Y8GGGGGG8888888@@@@P.....\n";
+    std::cout << "\t\t  Y88888888888@@@@@P......\n";
+    std::cout << "\t\t  `Y8888888@@@@@@@P'......\n";
+    std::cout << "\t\t     `@@@@@@@@@P'.......\n";
+    std::cout << "\t\t        \"\"\"\"........\n";
+    std::cout << "\t\t  ___    ____        _ _ \n";
+    std::cout << "\t\t ( _ )  | __ )  __ _| | |\n";
+    std::cout << "\t\t / _ \\  |  _ \\ / _` | | |\n";
+    std::cout << "\t\t| (_) | | |_) | (_| | | |\n";
+    std::cout << "\t\t \\___/  |____/ \\__,_|_|_|\n";
+    std::cout << std::endl;
+    std::cout << "\t\tNot sure about your future? Fear not!\n";
+    std::cout << "\t\tThe Magic 8 Ball is hear to help you.\n";
+    std::cout << "\n\t\tThink of a YES-NO question and\n" << "\t\tpress ENTER to shake the Magic 8 Ball.\n\n";
     PressEnter();
 }
 
@@ -46,14 +56,12 @@ void Magic8Ball::ShowLogoOnExit () {
     std::cout << "\t  \\            Ball              /\n";
     std::cout << "\t   `.                          ,'\n";
     std::cout << "\t     \\       Version:        /\n";
-    std::cout << "\t      '-.      0.2.5      ,-'\n";
+    std::cout << "\t      '-.      0.2.6      ,-'\n";
     std::cout << "\t        '-.            ,-'        \n";
     std::cout << "\t            `---------'            \n";
-    std::cout << "\tMade with a keyboard & CLion\n";
-    std::cout << "\t(c) Noob Code, 2017\n\n";
-    std::cout << "\tPRESS ANY KEY TO EXIT\n";
-    std::cout << "\t";
-    std::cin.ignore();
+    std::cout << "\t\tMade with a keyboard & CLion\n";
+    std::cout << "\t\t(c) Noob Code, 2017\n\n";
+    std::cout << std::endl;
 }
 
 void Magic8Ball::Shake8Ball() {
@@ -69,15 +77,21 @@ void Magic8Ball::Shake8Ball() {
 
 std::string Magic8Ball::GetTheReply() {
     ClearScreen();
-    std::cout << "\n\t" << The8BallAnswer;
+    std::cout << "\t _____ _             ___                         \n";
+    std::cout << "\t|_   _| |__   ___   ( _ )   ___  __ _ _   _ ___  \n";
+    std::cout << "\t  | | | '_ \\ / _ \\  / _ \\  / __|/ _` | | | / __| \n";
+    std::cout << "\t  | | | | | |  __/ | (_) | \\__ \\ (_| | |_| \\__ \\ \n";
+    std::cout << "\t  |_| |_| |_|\\___|  \\___/  |___/\\__,_|\\__, |___/ \n";
+    std::cout << "\t                                       |___/      \n";
+    std::cout << "\n\t\t--> " << The8BallAnswer;
     std::cout << std::endl;
     return The8BallAnswer;
 }
 
 bool Magic8Ball::Ask8BallAgain() {
-    std::cout << "\n\tShake the 8 Ball again?\n";
-    std::cout << "\t[S]hake it again or [Q]uit it!\n";
-    std::cout << "\t";
+    std::cout << "\n\t\tShake the 8 Ball again?\n";
+    std::cout << "\t\t[S]hake it again or [Q]uit it!\n";
+    std::cout << "\t\t";
     std::string key;
     std::getline(std::cin, key);
     if (key[0] == 's' || key[0] == 'S')
@@ -102,7 +116,7 @@ void Magic8Ball::ClearScreen () { std::cout << "\033[2J\033[1;1H"; }
 
 void Magic8Ball::PressEnter () {
     std::string temp;
-    std::cout << "\tPress ENTER to continue...";
+    std::cout << "\t\tReady?";
     std::cin.ignore(std::numeric_limits<char>::max(), '\n');
     ClearScreen();
 }
