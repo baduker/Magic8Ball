@@ -1,7 +1,7 @@
 #include "Magic8Ball.h"
 
-int main()
+int main ()
 {
-    DoMagic();
+    DoMagic ();
     return 0;
 }
