@@ -11,15 +11,15 @@ void Magic8Ball::ShowLogo () {
     The8();
     TheBall();
 
-    wait_for = 800;
+    wait_for = 1200;
     Sleep(wait_for);
     TheInfo_Part_One();
 
-    wait_for = 1000;
+    wait_for = 2000;
     Sleep(wait_for);
     TheInfo_Part_Two();
 
-    wait_for = 1400;
+    wait_for = 2400;
     Sleep(wait_for);
     PressEnter();
 }
@@ -41,7 +41,7 @@ void Magic8Ball::ShowLogoOnExit () {
     std::cout << "\t|     \\___/  |_.__/ \\__,_|_|_|    |\n";
     std::cout << "\t|                                 |\n";
     std::cout << "\t|  +-+-+-+-+-+-+-+-+ +-+-+-+-+-+  |\n";
-    std::cout << "\t|  |V|E|R|S|I|O|N|:| |0|.|2|.|7|  |\n";
+    std::cout << "\t|  |V|E|R|S|I|O|N|:| |0|.|3|.|0|  |\n";
     std::cout << "\t|  +-+-+-+-+-+-+-+-+ +-+-+-+-+-+  |\n";
     std::cout << "\t|                                 |\n";
     std::cout << "\t|  made with a keyboard and CLion |\n";
@@ -64,10 +64,15 @@ void Magic8Ball::Shake8Ball () {
 
 std::string Magic8Ball::GetTheReply () {
     ClearScreen();
+    std::cout << std::endl;
+    std::cout << std::endl;
+    std::cout << std::endl;
     std::cout << "\t#---the Magic 8 Ball says: ---#\n";
-    std::cout << "\t                               \n";
+    std::cout << std::endl;
+    std::cout << std::endl;
     std::cout << "\t " << The8BallAnswer << " \n";
-    std::cout << "\t                               \n";
+    std::cout << std::endl;
+    std::cout << std::endl;
     std::cout << "\t+---Shake the 8 Ball again?---+\n";
     std::cout << "\t|                             |\n";
     std::cout << "\t| [S]hake it again or [Q]uit! |\n";
@@ -110,7 +115,11 @@ void Magic8Ball::ClearScreen () { std::cout << "\033[2J\033[1;1H"; }
 
 void Magic8Ball::PressEnter () {
     std::string temp;
-    std::cout << "\t\tReady?";
+    std::cout << "\t\tAre you ready?\n\n";
+    wait_for = 2000;
+    Sleep (wait_for);
+    std::cout << "\t\tPress ENTER to shake the Magic 8 Ball.\n";
+    std::cout << "\t\t";
     std::cin.ignore(std::numeric_limits<char>::max(), '\n');
     ClearScreen();
 }
@@ -160,8 +169,7 @@ void Magic8Ball::TheInfo_Part_One () {
 }
 
 void Magic8Ball::TheInfo_Part_Two () {
-    std::cout << "\n\t\tThink of a YES-NO question and\n";
-    std::cout << "\t\tpress ENTER to shake the Magic 8 Ball.\n\n";
+    std::cout << "\n\t\tThink of a YES-NO question.\n\n";
 }
 
 //This function encapsulates the entire program
