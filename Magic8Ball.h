@@ -8,17 +8,25 @@ extern void DoMagic ();
 class Magic8Ball {
 public:
 
-    Magic8Ball(); // This is the constructor
+    Magic8Ball (); // This is the constructor
 
     void ShowLogo (); // Prints the 8 Ball ASCII art
     void ShowLogoOnExit ();
-    void Shake8Ball(); // This is the Magic 8 Ball mutator
-    std::string GetTheReply(); // Gets the answers from the mutator (8 Ball)
-    bool Ask8BallAgain(); // Checks if the user wants to shake the 8 Ball again
+    void Shake8Ball (); // This is the Magic 8 Ball mutator
+    std::string GetTheReply (); // Gets the answers from the mutator (8 Ball)
+    bool Ask8BallAgain (); // Checks if the user wants to shake the 8 Ball again
 
 
-    void ClearScreen();
-    void PressEnter();
+    void ClearScreen ();
+    void PressEnter ();
+    int wait_for;
+    void Sleep (int time);
+
+    void TheMagic ();
+    void The8 ();
+    void TheBall ();
+    void TheInfo_Part_One ();
+    void TheInfo_Part_Two ();
 
 private:
     // The collections of built-in 8 Ball answers //
