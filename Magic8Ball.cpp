@@ -41,7 +41,7 @@ void Magic8Ball::ShowLogoOnExit () {
     std::cout << "\t|     \\___/  |_.__/ \\__,_|_|_|    |\n";
     std::cout << "\t|                                 |\n";
     std::cout << "\t|  +-+-+-+-+-+-+-+-+ +-+-+-+-+-+  |\n";
-    std::cout << "\t|  |V|E|R|S|I|O|N|:| |0|.|3|.|0|  |\n";
+    std::cout << "\t|  |V|E|R|S|I|O|N|:| |0|.|3|.|1|  |\n";
     std::cout << "\t|  +-+-+-+-+-+-+-+-+ +-+-+-+-+-+  |\n";
     std::cout << "\t|                                 |\n";
     std::cout << "\t|  made with a keyboard and CLion |\n";
@@ -51,18 +51,23 @@ void Magic8Ball::ShowLogoOnExit () {
     std::cout << std::endl;
 }
 
-void Magic8Ball::Shake8Ball () {
+int Magic8Ball::Shake8Ball () {
     srand(time(NULL));
-    int Random8BallAnswer; // local variable to run the mutator
-    Random8BallAnswer = rand() % (0 - 33);
-    /* The mutator "engine" picks a random number between 0 and 33 to match
+
+    Random8BallAnswer = rand() % (0 - 40);
+
+    /* The mutator "engine" picks a random number between 0 and 40 to match
      * the size of the array which stores the default 8 Ball answers. */
-    The8BallAnswer = Default8BallAnswers[Random8BallAnswer];
-    /* This converts the randomly selected array value
-     * to the string and outputs it as the 8 Ball answer */
+
+    return Random8BallAnswer;
     }
 
-std::string Magic8Ball::GetTheReply () {
+void Magic8Ball::GetTheReply () {
+
+    /* This converts the randomly selected array value
+     * to the string and outputs it as the 8 Ball answer */
+    The8BallAnswer = pDefault8BallAnswers[*(pRandom8BallAnswer)];
+
     ClearScreen();
     std::cout << std::endl;
     std::cout << std::endl;
@@ -70,7 +75,7 @@ std::string Magic8Ball::GetTheReply () {
     std::cout << "\t#---the Magic 8 Ball says: ---#\n";
     std::cout << std::endl;
     std::cout << std::endl;
-    std::cout << "\t " << The8BallAnswer << " \n";
+    std::cout << "\t " << *(pThe8BallAnswer) << " \n";
     std::cout << std::endl;
     std::cout << std::endl;
     std::cout << "\t+---Shake the 8 Ball again?---+\n";
@@ -79,7 +84,6 @@ std::string Magic8Ball::GetTheReply () {
     std::cout << "\t|                             |\n";
     std::cout << "\t+-----------------------------+\n";
     std::cout << std::endl;
-    return The8BallAnswer;
 }
 
 bool Magic8Ball::Ask8BallAgain () {
@@ -99,12 +103,12 @@ bool Magic8Ball::Ask8BallAgain () {
 
     if (key == 's' || key == 'S')
     {
-        ClearScreen();
+        ClearScreen ();
         reply = true;
     }
     else if (key == 'q' || key == 'Q') {
-        ClearScreen();
-        ShowLogoOnExit();
+        ClearScreen ();
+        ShowLogoOnExit ();
         reply = false;
     }
 
@@ -124,8 +128,8 @@ void Magic8Ball::PressEnter () {
     ClearScreen();
 }
 
-void Magic8Ball::Sleep (int x) {
-    std::this_thread::sleep_for(std::chrono::milliseconds(x));
+void Magic8Ball::Sleep (int pause) {
+    std::this_thread::sleep_for(std::chrono::milliseconds(pause));
 }
 
 void Magic8Ball::TheMagic () {
