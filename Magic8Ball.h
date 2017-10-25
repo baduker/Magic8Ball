@@ -15,7 +15,8 @@ public:
 
     int Shake8Ball (); // This is the Magic 8 Ball mutator
 
-    void GetTheReply (); // Gets the answers from the mutator (8 Ball)
+    void GetTheReply (); // Gets the answers from the mutator
+    void ShowWhatThe8BallSays (); // Sends the RandomAnswer to the terminal
     bool Ask8BallAgain (); // Checks if the user wants to shake the 8 Ball again
 
 
@@ -27,20 +28,20 @@ public:
     void TheMagic ();
     void The8 ();
     void TheBall ();
-    void TheInfo_Part_One ();
-    void TheInfo_Part_Two ();
+    void The_Info_Part_One ();
+    void The_Info_Part_Two ();
 
-    int Random8BallAnswer; // global variable to run the mutator
+    int Random8BallAnswer; // Global variable to run the mutator
     int * pRandom8BallAnswer = &Random8BallAnswer;
 
-    std::string The8BallAnswer; // The return variable from the mutator
+    std::string The8BallAnswer; // Return variable from the mutator
     const std::string * pThe8BallAnswer = &The8BallAnswer;
 
-    const std::string * pDefault8BallAnswers = Default8BallAnswers;
+    const std::string * pDefault8BallAnswers = Default8BallAnswers; // Pointer to the Default8BallAnswers array items
 
 private:
 
-    // The collections of built-in 8 Ball answers //
+    // The collections of built-in 8 Ball answers
     std::string Default8BallAnswers [40]= {"As I see it.", "Yes.", "Ask again later.", "Better not tell you now.",
                                     "Cannot predict now.", "Concentrate and ask again.", "Don’t count on it.",
                                     "It is certain.", "It is decidedly so.", "Most likely.", "My reply is no.",
