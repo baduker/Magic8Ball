@@ -78,11 +78,13 @@ int Magic8Ball::Shake8Ball () {
     /* The mutator "engine" picks a random number between 0 and 40 to match
     * the size of the array which stores the default 8 Ball answers. */
     srand(time(NULL));
-    Random8BallAnswer = rand() % (0 - 40); // The range matches the size of the Default8BallAnswers array
+    // The range matches the size of the Default8BallAnswers array
+    Random8BallAnswer = rand() % (0 - 40);
     return Random8BallAnswer;
 }
 
-// The getter function that retrieves the randomly selected string from the Default8BallAnswer array
+/* The getter function that retrieves the randomly selected string
+from the Default8BallAnswer array*/
 void Magic8Ball::GetTheReply () {
 
     /* This converts the randomly selected array value
