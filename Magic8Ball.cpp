@@ -59,15 +59,15 @@ void Magic8Ball::ShowLogo () {
     The8();
     TheBall();
     // Pause for the first part of the introduction
-    wait_for = 1200;
+    wait_for = 900;
     Sleep(wait_for);
     The_Info_Part_One();
     // Pause for the second part of the introduction
-    wait_for = 1800;
+    wait_for = 1500;
     Sleep(wait_for);
     The_Info_Part_Two();
     // Finally, ask if the user is ready to shake the ball
-    wait_for = 2200;
+    wait_for = 1800;
     Sleep(wait_for);
     PressEnter();
 }
@@ -96,24 +96,24 @@ void Magic8Ball::GetTheReply () {
 void Magic8Ball::ShowWhatThe8BallSays () {
 
     std::cout << std::endl;
-    std::cout << "\t#---the Magic 8 Ball says: ---#\n";
+    std::cout << "\t\t#---the Magic 8 Ball says: ---#\n";
     std::cout << std::endl;
     std::cout << std::endl;
-    std::cout << "\t " << *(pThe8BallAnswer) << " \n";
+    std::cout << "\t\t " << *(pThe8BallAnswer) << " \n";
     std::cout << std::endl;
     std::cout << std::endl;
-    std::cout << "\t+---Shake the 8 Ball again?---+\n";
-    std::cout << "\t|                             |\n";
-    std::cout << "\t| [S]hake it again or [Q]uit! |\n";
-    std::cout << "\t|                             |\n";
-    std::cout << "\t+-----------------------------+\n";
+    std::cout << "\t\t+---Shake the 8 Ball again?---+\n";
+    std::cout << "\t\t|                             |\n";
+    std::cout << "\t\t| [S]hake it again or [Q]uit! |\n";
+    std::cout << "\t\t|                             |\n";
+    std::cout << "\t\t+-----------------------------+\n";
     std::cout << std::endl;
 }
 
 // Checks if the user wants to continue shaking the ball for more answers
 bool Magic8Ball::Ask8BallAgain () {
 
-    std::cout << "\t";
+    std::cout << "\t\t";
     char key;
     bool reply;
 
@@ -156,7 +156,7 @@ void Magic8Ball::ShowLogoOnExit () {
     std::cout << "\t|     \\___/  |_.__/ \\__,_|_|_|    |\n";
     std::cout << "\t|                                 |\n";
     std::cout << "\t|  +-+-+-+-+-+-+-+-+ +-+-+-+-+-+  |\n";
-    std::cout << "\t|  |V|E|R|S|I|O|N|:| |0|.|3|.|2|  |\n";
+    std::cout << "\t|  |V|E|R|S|I|O|N|:| |0|.|3|.|3|  |\n";
     std::cout << "\t|  +-+-+-+-+-+-+-+-+ +-+-+-+-+-+  |\n";
     std::cout << "\t|                                 |\n";
     std::cout << "\t|  made with a keyboard and CLion |\n";
@@ -173,7 +173,7 @@ void Magic8Ball::PressEnter () {
 
     std::string temp;
     std::cout << "\t\tAre you ready?\n\n";
-    wait_for = 2000;
+    wait_for = 1500;
     Sleep (wait_for);
     std::cout << "\t\tPress ENTER to shake the Magic 8 Ball.\n";
     std::cout << "\t\t";
