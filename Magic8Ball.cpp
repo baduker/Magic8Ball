@@ -72,6 +72,35 @@ void Magic8Ball::ShowLogo () {
     PressEnter();
 }
 
+// Displays credits screen on exit
+void Magic8Ball::ShowLogoOnExit () {
+
+    ClearScreen();
+    std::cout << "\t+---------------------------------+\n";
+    std::cout << "\t|               the               |\n";
+    std::cout << "\t|    __  __             _         |\n";
+    std::cout << "\t|   |  \\/  | __ _  __ _(_) ___    |\n";
+    std::cout << "\t|   | |\\/| |/ _` |/ _` | |/ __|   |\n";
+    std::cout << "\t|   | |  | | (_| | (_| | | (__    |\n";
+    std::cout << "\t|   |_|  |_|\\__,_|\\__, |_|\\___|   |\n";
+    std::cout << "\t|                 |___/           |\n";
+    std::cout << "\t|      ___    _           _ _     |\n";
+    std::cout << "\t|     ( _ )  | |__   __ _| | |    |\n";
+    std::cout << "\t|     / _ \\  | '_ \\ / _` | | |    |\n";
+    std::cout << "\t|    | (_) | | |_) | (_| | | |    |\n";
+    std::cout << "\t|     \\___/  |_.__/ \\__,_|_|_|    |\n";
+    std::cout << "\t|                                 |\n";
+    std::cout << "\t|  +-+-+-+-+-+-+-+-+ +-+-+-+-+-+  |\n";
+    std::cout << "\t|  |V|E|R|S|I|O|N|:| |0|.|3|.|4|  |\n";
+    std::cout << "\t|  +-+-+-+-+-+-+-+-+ +-+-+-+-+-+  |\n";
+    std::cout << "\t|                                 |\n";
+    std::cout << "\t|  made with a keyboard and CLion |\n";
+    std::cout << "\t|       by NoobCode (c) 2017      |\n";
+    std::cout << "\t|                                 |\n";
+    std::cout << "\t+---------------------------------+\n";
+    std::cout << std::endl;
+}
+
 // This is the engine for generating a random 8 Ball answer
 int Magic8Ball::Shake8Ball () {
 
@@ -79,17 +108,18 @@ int Magic8Ball::Shake8Ball () {
     * the size of the array which stores the default 8 Ball answers. */
     srand(time(NULL));
     // The range matches the size of the Default8BallAnswers array
-    Random8BallAnswer = rand() % (0 - 40);
+    Random8BallAnswer = rand() % (0 - 40) + 1;
     return Random8BallAnswer;
 }
 
 /* The getter function that retrieves the randomly selected string
 from the Default8BallAnswer array*/
-void Magic8Ball::GetTheReply () {
+std::string Magic8Ball::GetTheReply () {
 
     /* This converts the randomly selected array value
      * to the string and outputs it as the 8 Ball answer */
     The8BallAnswer = pDefault8BallAnswers[*(pRandom8BallAnswer)];
+    return The8BallAnswer;
 }
 
 // Displays randomly selected 8 ball answer
@@ -135,35 +165,6 @@ bool Magic8Ball::Ask8BallAgain () {
         reply = false; // Quits the program
     }
     return (reply);
-}
-
-// Displays credits screen on exit
-void Magic8Ball::ShowLogoOnExit () {
-
-    ClearScreen();
-    std::cout << "\t+---------------------------------+\n";
-    std::cout << "\t|               the               |\n";
-    std::cout << "\t|    __  __             _         |\n";
-    std::cout << "\t|   |  \\/  | __ _  __ _(_) ___    |\n";
-    std::cout << "\t|   | |\\/| |/ _` |/ _` | |/ __|   |\n";
-    std::cout << "\t|   | |  | | (_| | (_| | | (__    |\n";
-    std::cout << "\t|   |_|  |_|\\__,_|\\__, |_|\\___|   |\n";
-    std::cout << "\t|                 |___/           |\n";
-    std::cout << "\t|      ___    _           _ _     |\n";
-    std::cout << "\t|     ( _ )  | |__   __ _| | |    |\n";
-    std::cout << "\t|     / _ \\  | '_ \\ / _` | | |    |\n";
-    std::cout << "\t|    | (_) | | |_) | (_| | | |    |\n";
-    std::cout << "\t|     \\___/  |_.__/ \\__,_|_|_|    |\n";
-    std::cout << "\t|                                 |\n";
-    std::cout << "\t|  +-+-+-+-+-+-+-+-+ +-+-+-+-+-+  |\n";
-    std::cout << "\t|  |V|E|R|S|I|O|N|:| |0|.|3|.|3|  |\n";
-    std::cout << "\t|  +-+-+-+-+-+-+-+-+ +-+-+-+-+-+  |\n";
-    std::cout << "\t|                                 |\n";
-    std::cout << "\t|  made with a keyboard and CLion |\n";
-    std::cout << "\t|       by NoobCode (c) 2017      |\n";
-    std::cout << "\t|                                 |\n";
-    std::cout << "\t+---------------------------------+\n";
-    std::cout << std::endl;
 }
 
 // Clear the terminal screen for better readability

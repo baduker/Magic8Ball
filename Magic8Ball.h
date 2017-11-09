@@ -15,7 +15,7 @@ public:
 
     int Shake8Ball (); // This is the Magic 8 Ball mutator
 
-    void GetTheReply (); // Gets the answers from the mutator
+    std::string GetTheReply (); // Gets the answers from the mutator
     void ShowWhatThe8BallSays (); // Sends the RandomAnswer to the terminal
     bool Ask8BallAgain (); // Checks if the user wants to shake the 8 Ball again
 
